@@ -17,12 +17,16 @@ const config: ThemeConfig = {
 
 // 3. extend the theme
 const colors = {
-	cardBackground: '#FFFFFF',
-	mainBackground: '#F5F6FA',
-	buttonColor: '#A071FF',
-	purpleGradient: 'linear-gradient(90deg, #A071FF 29.5%, #8852F4 101.15%)',
-	placeholderColor: '#BDBDBD',
-	inputColor: '#F5F8FA',
+	primary: '#329450',
+	primaryHover: '#206A37',
+	darkPrimary: '#186A42',
+	footer: '#252525',
+	footerText: '#B0B0B0',
+	text: '#000000',
+	blackButton: '#000000',
+	greenButton: '#329450',
+	buttonText: '#FFFFFF',
+	lightText: '#FFFFFF',
 };
 
 const skeletonTheme = defineStyleConfig({});
@@ -30,21 +34,21 @@ const skeletonTheme = defineStyleConfig({});
 const components = {
 	Button: {
 		baseStyle: {
-			borderRadius: '8px',
+			borderRadius: '4px',
 		},
 		variants: {
-			scan: {
-				fontSize: '18px',
-				fontWeight: '500',
-				borderRadius: '16px',
-				bg: 'primary.500',
-				color: 'white',
-			},
+			// scan: {
+			// 	fontSize: '18px',
+			// 	fontWeight: '500',
+			// 	borderRadius: '16px',
+			// 	bg: 'primary.500',
+			// 	color: 'white',
+			// },
 		},
 	},
 	Heading: {
 		baseStyle: {
-			color: 'text.500', // Set the color. You can use theme color tokens or raw CSS values.
+			color: '#329450', // Set the color. You can use theme color tokens or raw CSS values.
 		},
 	},
 };
