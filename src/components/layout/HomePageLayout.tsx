@@ -3,6 +3,7 @@ import React, { FC, useEffect, useState } from 'react';
 import Body from './Body';
 import Navbar from '../navbar/Navbar';
 import StickyNav from '../navbar/StickyNav';
+import NavTopSection from '../navbar/NavTopSection';
 
 type HomePageLayoutProps = {
 	children: React.ReactNode;
@@ -26,7 +27,20 @@ const HomePageLayout: FC<HomePageLayoutProps> = ({ children, ...props }) => {
 	return (
 		<>
 			{scrolled ? (
-				<StickyNav position='sticky' top='0' zIndex={'sticky'} />
+				<>
+					<NavTopSection
+						display={{ base: 'block', lg: 'none' }}
+						position='sticky'
+						top='0'
+						zIndex={'sticky'}
+					/>
+					<StickyNav
+						display={{ base: 'none', lg: 'block' }}
+						position='sticky'
+						top='0'
+						zIndex={'sticky'}
+					/>
+				</>
 			) : (
 				<Navbar zIndex={6} />
 			)}

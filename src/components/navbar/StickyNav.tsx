@@ -31,7 +31,7 @@ const StickyNav: FC<StickyNavProps> = ({ ...props }) => {
 			bg='white'
 			initial={{ y: -100 }}
 			animate={{ y: 0 }}
-			transition={{ease: 'easeIn' } as any}
+			transition={{ ease: 'easeIn' } as any}
 			{...props}
 		>
 			<Grid
@@ -45,10 +45,7 @@ const StickyNav: FC<StickyNavProps> = ({ ...props }) => {
 					<Heading fontSize='1.5rem'>ARTISAN</Heading>
 				</Flex>
 				<MenuItems justify='center' />
-				<Flex
-					//  bg='white'
-					justify='flex-end'
-				>
+				<Flex justify='flex-end'>
 					<Flex alignItems='center'>
 						<CustomIconButton
 							icon={<IoSearch size='24px' />}
