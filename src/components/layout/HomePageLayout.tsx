@@ -1,30 +1,35 @@
 import { Flex } from '@chakra-ui/react';
-import React, { FC } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import Body from './Body';
 import Navbar from '../navbar/Navbar';
+import StickyNav from '../navbar/StickyNav';
 
 type HomePageLayoutProps = {
 	children: React.ReactNode;
 };
 
 const HomePageLayout: FC<HomePageLayoutProps> = ({ children, ...props }) => {
-	// HOOKS
+	const [scrolled, setScrolled] = useState(false);
 
-	// STATE
+	useEffect(() => {
+		const handleScroll = () => {
+			const isScrolled = window.scrollY > 200;
+			setScrolled(isScrolled);
+		};
 
-	// VARIABLES
-
-	// STYLES
-
-	// FUNCTIONS
-
-	// EFFECTS
-
-	// COMPONENTS
+		window.addEventListener('scroll', handleScroll);
+		return () => {
+			window.removeEventListener('scroll', handleScroll);
+		};
+	}, []);
 
 	return (
 		<>
-			<Navbar />
+			{scrolled ? (
+				<StickyNav position='sticky' top='0' zIndex={'sticky'} />
+			) : (
+				<Navbar zIndex={6} />
+			)}
 			<Body>{children}</Body>
 		</>
 	);

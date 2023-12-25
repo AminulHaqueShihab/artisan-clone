@@ -1,29 +1,81 @@
+import { Flex, Text } from '@chakra-ui/react';
 import React, { FC } from 'react';
 
-type HomePageProps = {
-
-}
+type HomePageProps = {};
 
 const HomePage: FC<HomePageProps> = ({}) => {
-// HOOKS
+	// HOOKS
 
-// STATE
+	// STATE
 
-// VARIABLES
+	// VARIABLES
 
-// STYLES
+	// STYLES
 
-// FUNCTIONS
+	// FUNCTIONS
 
-// EFFECTS
+	// EFFECTS
 
-// COMPONENTS
+	// COMPONENTS
 
-  return (
-    <div>
-     HomePage
-    </div>
-  );
+	return (
+		<Flex direction='column' zIndex={0}>
+			<Text>Home Page</Text>
+			<Text>Home Page</Text>
+			<Text>Home Page</Text>
+			<Text>Home Page</Text>
+			<Text>Home Page</Text>
+			<Text>Home Page</Text>
+			<Text>Home Page</Text>
+			<Text>Home Page</Text>
+			<Text>Home Page</Text>
+			<Text>Home Page</Text>
+			<Text>Home Page</Text>
+			<Text>Home Page</Text>
+			<Text>Home Page</Text>
+			<Text>Home Page</Text>
+			<Text>Home Page</Text>
+			<Text>Home Page</Text>
+			<Text>Home Page</Text>
+			<Text>Home Page</Text>
+			<Text>Home Page</Text>
+			<Text>Home Page</Text>
+			<Text>Home Page</Text>
+			<Text>Home Page</Text>
+			<Text>Home Page</Text>
+			<Text>Home Page</Text>
+			<Text>Home Page</Text>
+			<Text>Home Page</Text>
+			<Text>Home Page</Text>
+			<Text>Home Page</Text>
+			<Text>Home Page</Text>
+			<Text>Home Page</Text>
+			<Text>Home Page</Text>
+			<Text>Home Page</Text>
+			<Text>Home Page</Text>
+			<Text>Home Page</Text>
+			<Text>Home Page</Text>
+			<Text>Home Page</Text>
+			<Text>Home Page</Text>
+			<Text>Home Page</Text>
+			<Text>Home Page</Text>
+			<Text>Home Page</Text>
+			<Text>Home Page</Text>
+			<Text>Home Page</Text>
+			<Text>Home Page</Text>
+			<Text>Home Page</Text>
+			<Text>Home Page</Text>
+			<Text>Home Page</Text>
+			<Text>Home Page</Text>
+			<Text>Home Page</Text>
+			<Text>Home Page</Text>
+			<Text>Home Page</Text>
+			<Text>Home Page</Text>
+			<Text>Home Page</Text>
+			<Text>Home Page</Text>
+			<Text>Home Page</Text>
+		</Flex>
+	);
 };
 
 export default HomePage;

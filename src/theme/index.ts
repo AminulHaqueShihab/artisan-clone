@@ -24,6 +24,7 @@ const colors = {
 	footerText: '#B0B0B0',
 	text: '#000000',
 	blackButton: '#000000',
+	subCategory: '#626262',
 	greenButton: '#329450',
 	buttonText: '#FFFFFF',
 	lightText: '#FFFFFF',

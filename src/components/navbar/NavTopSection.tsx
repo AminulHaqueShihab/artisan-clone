@@ -1,4 +1,5 @@
 import {
+	BoxProps,
 	Flex,
 	Grid,
 	GridItem,
@@ -12,65 +13,67 @@ import React, { FC } from 'react';
 import { VscAccount } from 'react-icons/vsc';
 import { FaRegHeart } from 'react-icons/fa';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
+import { IoMenu } from 'react-icons/io5';
 import { CiSearch } from 'react-icons/ci';
 import { layout, symbol } from '@/lib/config';
 import CustomIconButton from '../util/CustomIconButton';
 import NavSearch from './NavSearch';
 
-type NavTopSectionProps = {};
+type NavTopSectionProps = BoxProps & {};
 
 const NavTopSection: FC<NavTopSectionProps> = ({}) => {
-	// HOOKS
-
-	// STATE
-
-	// VARIABLES
-
-	// STYLES
-
-	// FUNCTIONS
-
-	// EFFECTS
-
-	// COMPONENTS
-
 	return (
 		<Grid
 			templateColumns='1fr 1fr 1fr'
 			justifyContent='center'
-			p='1.25rem 1.875rem'
-			maxW='1320px'
+			p={{ base: '1rem 1rem', lg: '1.25rem 1rem' }}
+			maxW='1330px'
 			mx='auto'
 		>
-			<NavSearch />
+			<NavSearch display={{ base: 'none', lg: 'flex' }} />
+			<Flex
+				justify='flex-start'
+				alignItems='center'
+				display={{ base: 'flex', lg: 'none' }}
+			>
+				<CustomIconButton icon={<IoMenu size='1.7rem' />} aria-label='Search' />
+			</Flex>
 
 			<Flex
 				// bg={'yellow'}
 				justifyContent='center'
 				alignItems='center'
 			>
-				<Heading fontSize='3rem'>ARTISAN</Heading>
+				<Heading fontSize={{ base: '2rem', lg: '3rem' }}>ARTISAN</Heading>
 			</Flex>
 
 			<Flex
 				//  bg='white'
 				justify='flex-end'
 			>
-				<Flex gap={3} alignItems='center'>
+				<Flex gap={2} alignItems='center'>
 					<CustomIconButton
 						icon={<VscAccount size='1.5rem' />}
+						display={{ base: 'none', lg: 'flex' }}
 						aria-label='Account'
 					/>
 					<CustomIconButton
 						icon={<FaRegHeart size='1.5rem' />}
+						variant='badge'
+						display={{ base: 'none', lg: 'flex' }}
 						aria-label='Whishlist'
 					/>
 					<CustomIconButton
 						icon={<AiOutlineShoppingCart size='1.5rem' />}
+						variant='badge'
 						aria-label='Cart'
 					/>
 
-					<Text fontSize='1.5rem' fontWeight='600'>
+					<Text
+						fontSize='1rem'
+						fontWeight='700'
+						display={{ base: 'none', lg: 'flex' }}
+					>
 						{symbol.TAKA} 420
 					</Text>
 				</Flex>

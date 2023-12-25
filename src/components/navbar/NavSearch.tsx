@@ -1,13 +1,13 @@
-import { Flex, Input, InputGroup, InputLeftElement } from '@chakra-ui/react';
+import { Flex, FlexProps, Input, InputGroup, InputLeftElement } from '@chakra-ui/react';
 import React, { FC } from 'react';
 import CustomIconButton from '../util/CustomIconButton';
 import { CiSearch } from 'react-icons/ci';
 
-type NavSearchProps = {
+type NavSearchProps = FlexProps & {
 
 }
 
-const NavSearch: FC<NavSearchProps> = ({}) => {
+const NavSearch: FC<NavSearchProps> = ({...props}) => {
 // HOOKS
 
 // STATE
@@ -26,6 +26,7 @@ const NavSearch: FC<NavSearchProps> = ({}) => {
 		<Flex
 			//  bg={'white'}
 			alignItems='center'
+			{...props}
 		>
 			<InputGroup>
 				<InputLeftElement pointerEvents='none'>

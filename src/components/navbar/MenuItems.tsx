@@ -1,21 +1,20 @@
+import { CATEGORIES } from '@/lib/data';
 import { Flex, FlexProps } from '@chakra-ui/react';
 import React, { FC } from 'react';
 import NavItem from './NavItem';
-import { motion } from 'framer-motion';
-import { CATEGORIES } from '@/lib/data';
-import MenuItems from './MenuItems';
 
-type NavBottomSectionProps = FlexProps & {};
+type MenuItemsProps = FlexProps & {};
 
-const NavBottomSection: FC<NavBottomSectionProps> = ({ ...props }) => {
-	const menuItems = (
-		<Flex maxW='1320px' mx='auto' gap={8} alignItems='center' px={2}>
+const MenuItems: FC<MenuItemsProps> = ({ ...props }) => {
+	return (
+		<Flex gap={8} alignItems='center' px={2} {...props}>
 			{CATEGORIES.map(category => (
 				<>
 					{category.subcategories ? (
 						<NavItem
 							key={category.id}
 							id={category.id}
+              fontSize='0.9rem'
 							href='/'
 							variant='menu'
 							data={category.subcategories}
@@ -27,6 +26,7 @@ const NavBottomSection: FC<NavBottomSectionProps> = ({ ...props }) => {
 						<NavItem
 							key={category.id}
 							id={category.id}
+              fontSize='0.9rem'
 							href='/'
 							variant='link'
 							title={category.name}
@@ -38,19 +38,6 @@ const NavBottomSection: FC<NavBottomSectionProps> = ({ ...props }) => {
 			))}
 		</Flex>
 	);
-
-	return (
-		<Flex
-			py='0.75rem'
-			display={{ base: 'none', lg: 'flex' }}
-			justify='center'
-			zIndex={99}
-			{...props}
-		>
-			{/* {menuItems} */}
-			<MenuItems maxW='1320px' mx='auto' />
-		</Flex>
-	);
 };
 
-export default NavBottomSection;
+export default MenuItems;
