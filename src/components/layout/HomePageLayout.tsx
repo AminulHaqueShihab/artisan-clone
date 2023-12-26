@@ -5,6 +5,7 @@ import Navbar from '../navbar/Navbar';
 import StickyNav from '../navbar/StickyNav';
 import NavTopSection from '../navbar/NavTopSection';
 import Footer from '../footer/Footer';
+import Column from '../util/Column';
 
 type HomePageLayoutProps = {
 	children: React.ReactNode;

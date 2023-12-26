@@ -8,6 +8,7 @@ import MenuItems from './MenuItems';
 type NavBottomSectionProps = FlexProps & {};
 
 const NavBottomSection: FC<NavBottomSectionProps> = ({ ...props }) => {
+	
 	const menuItems = (
 		<Flex maxW='1320px' mx='auto' gap={8} alignItems='center' px={2}>
 			{CATEGORIES.map(category => (

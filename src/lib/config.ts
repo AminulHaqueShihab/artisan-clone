@@ -11,4 +11,5 @@ export const image = {
 
 export const layout = {
 	MAX_WIDTH: '1280px',
+	MAX_WIDTH_NAV: '1280px',
 }

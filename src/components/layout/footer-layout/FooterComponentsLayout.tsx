@@ -1,12 +1,13 @@
-import { Flex } from '@chakra-ui/react';
+import { Flex, FlexProps } from '@chakra-ui/react';
 import React, { FC } from 'react';
 
-type FooterComponentsLayoutProps = {
+type FooterComponentsLayoutProps =FlexProps & {
 	children: React.ReactNode;
 };
 
 const FooterComponentsLayout: FC<FooterComponentsLayoutProps> = ({
 	children,
+  ...props
 }) => {
 	// HOOKS
 
@@ -15,6 +16,8 @@ const FooterComponentsLayout: FC<FooterComponentsLayoutProps> = ({
 	// VARIABLES
 	const PY_BASE = '4rem';
 	const PY_LARGE = '6rem';
+	const PX_BASE = '2rem';
+	const PX_LARGE = '2rem';
 	// STYLES
 
 	// FUNCTIONS
@@ -24,10 +27,12 @@ const FooterComponentsLayout: FC<FooterComponentsLayoutProps> = ({
 	// COMPONENTS
 
 	return (
-		<Flex py={{ base: PY_BASE, lg: PY_LARGE }}>
-			<Flex bg='red' w='full'>
-				{children}
-			</Flex>
+		<Flex
+			py={{ base: PY_BASE, lg: PY_LARGE }}
+			px={{ base: PX_BASE, lg: PX_LARGE }}
+			{...props}
+		>
+			<Flex w='full'>{children}</Flex>
 		</Flex>
 	);
 };

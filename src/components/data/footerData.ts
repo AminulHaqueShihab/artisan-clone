@@ -1,4 +1,4 @@
-type DataProps = {
+type FooterDataProps = {
 	title: string;
 	items: {
 		title: string;
@@ -6,7 +6,7 @@ type DataProps = {
 	}[];
 };
 
-const data: DataProps[] = [
+const FooterData: FooterDataProps[] = [
 	{
 		title: 'CATEGORIES',
 		items: [
@@ -55,4 +55,4 @@ const data: DataProps[] = [
 	},
 ];
 
-export default data;
+export default FooterData;
