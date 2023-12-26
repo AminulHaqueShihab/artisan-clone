@@ -144,7 +144,7 @@ const Footer: FC<FooterProps> = ({}) => {
 		</FooterComponentsLayout>
 	);
 	return (
-		<Flex direction='column' bg='footer' color='footerText'>
+		<Flex direction='column' bg='footer' color='footerText' zIndex={6}>
 			{topPart}
 			<Divider />
 			{bottomPart}
