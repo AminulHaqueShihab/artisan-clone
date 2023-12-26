@@ -2,7 +2,7 @@ import { Flex, FlexProps } from '@chakra-ui/react';
 import React, { FC } from 'react';
 import NavItem from './NavItem';
 import { motion } from 'framer-motion';
-import { CATEGORIES } from '@/lib/data';
+import { CATEGORIES } from '@/components/data/NavItemsdata';
 import MenuItems from './MenuItems';
 
 type NavBottomSectionProps = FlexProps & {};

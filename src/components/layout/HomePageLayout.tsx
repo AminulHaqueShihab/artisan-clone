@@ -4,6 +4,7 @@ import Body from './Body';
 import Navbar from '../navbar/Navbar';
 import StickyNav from '../navbar/StickyNav';
 import NavTopSection from '../navbar/NavTopSection';
+import Footer from '../footer/Footer';
 
 type HomePageLayoutProps = {
 	children: React.ReactNode;
@@ -45,6 +46,7 @@ const HomePageLayout: FC<HomePageLayoutProps> = ({ children, ...props }) => {
 				<Navbar zIndex={6} />
 			)}
 			<Body>{children}</Body>
+			<Footer />
 		</>
 	);
 };

@@ -41,12 +41,12 @@ const Navbar: FC<NavbarProps> = ({ ...props }) => {
 	}, []);
 	return (
 		<>
-			<Box {...props} bg='white'>
+			<Flex direction='column' {...props} bg='white'>
 				<NavTopSection />
 				<Divider />
 				<NavBottomSection />
 				<Divider />
-			</Box>
+			</Flex>
 		</>
 	);
 };

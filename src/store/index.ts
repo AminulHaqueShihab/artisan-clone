@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { setupListeners } from '@reduxjs/toolkit/query';
 import authApi, { mainApi } from './services/mainApi';
-import authSlice from './slices/authSlice';
+
 
 // const preloadedState = {
 // 	auth: {
@@ -13,8 +13,8 @@ import authSlice from './slices/authSlice';
 
 export const store = configureStore({
 	reducer: {
-		auth: authSlice,
-		[mainApi.reducerPath]: mainApi.reducer,
+		// auth: authSlice,
+		// [mainApi.reducerPath]: mainApi.reducer,
 	},
 	middleware: getDefaultMiddleware =>
 		getDefaultMiddleware().concat(mainApi.middleware).concat(),

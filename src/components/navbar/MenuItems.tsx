@@ -1,4 +1,4 @@
-import { CATEGORIES } from '@/lib/data';
+import { CATEGORIES } from '@/components/data/NavItemsdata';
 import { Flex, FlexProps } from '@chakra-ui/react';
 import React, { FC } from 'react';
 import NavItem from './NavItem';
@@ -14,7 +14,7 @@ const MenuItems: FC<MenuItemsProps> = ({ ...props }) => {
 						<NavItem
 							key={category.id}
 							id={category.id}
-              fontSize='0.9rem'
+							fontSize='0.9rem'
 							href='/'
 							variant='menu'
 							data={category.subcategories}
@@ -26,7 +26,7 @@ const MenuItems: FC<MenuItemsProps> = ({ ...props }) => {
 						<NavItem
 							key={category.id}
 							id={category.id}
-              fontSize='0.9rem'
+							fontSize='0.9rem'
 							href='/'
 							variant='link'
 							title={category.name}

@@ -12,10 +12,9 @@ const Body: FC<BodyProps> = ({ children, ...props }) => {
 			as='main'
 			bg='white'
 			w='full'
-			maxW='1440px'
+			maxW='1280px'
 			mx='auto'
-			py='72px'
-			pt='32px'
+			px={{ base: '1rem', lg: '1.25rem' }}
 			{...props}
 		>
 			{children}
