@@ -11,7 +11,6 @@ import {
 import React, { FC } from 'react';
 import FooterComponentsLayout from '../layout/footer-layout/FooterComponentsLayout';
 import Column from '../util/Column';
-import FooterData from '../data/FooterData';
 import { title } from 'process';
 import FooterColumns from './FooterColumns';
 import FooterText from './FooterText';
@@ -23,6 +22,7 @@ import {
 } from 'react-icons/fa';
 import CustomIconButton from '../util/CustomIconButton';
 import Link from 'next/link';
+import footerData from '../data/FooterData';
 
 type FooterProps = {};
 
@@ -114,7 +114,7 @@ const Footer: FC<FooterProps> = ({}) => {
 				{coloum1}
 				{coloum2}
 				{/* COLUMN 3 AND 4 */}
-				{FooterData.map(title => (
+				{footerData.map(title => (
 					<FooterColumns title={title.title}>
 						{title.items.map(item => (
 							<FooterText cursor='pointer' _hover={{ color: 'primary' }}>
