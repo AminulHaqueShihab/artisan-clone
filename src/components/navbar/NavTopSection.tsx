@@ -14,7 +14,7 @@ import React, { FC } from 'react';
 import { VscAccount } from 'react-icons/vsc';
 import { FaRegHeart } from 'react-icons/fa';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
-import { IoMenu } from 'react-icons/io5';
+import { IoMenu, IoSearch } from 'react-icons/io5';
 import { CiSearch } from 'react-icons/ci';
 import { layout, symbol } from '@/lib/config';
 import CustomIconButton from '../util/CustomIconButton';
@@ -23,7 +23,7 @@ import { motion } from 'framer-motion';
 
 type NavTopSectionProps = BoxProps & {};
 
-const NavTopSection: FC<NavTopSectionProps> = ({...props}) => {
+const NavTopSection: FC<NavTopSectionProps> = ({ ...props }) => {
 	return (
 		<Box
 			{...props}
@@ -37,19 +37,16 @@ const NavTopSection: FC<NavTopSectionProps> = ({...props}) => {
 				templateColumns='1fr 1fr 1fr'
 				justifyContent='center'
 				p={{ base: '1rem 1rem', lg: '1.25rem 1rem' }}
-				maxW='1330px'
+				maxW={layout.MAX_WIDTH}
 				mx='auto'
 			>
-				<NavSearch display={{ base: 'none', lg: 'flex' }} />
+				<NavSearch display={{ base: 'none', xl: 'flex' }} />
 				<Flex
 					justify='flex-start'
 					alignItems='center'
-					display={{ base: 'flex', lg: 'none' }}
+					display={{ base: 'flex', xl: 'none' }}
 				>
-					<CustomIconButton
-						icon={<IoMenu size='1.7rem' />}
-						aria-label='Search'
-					/>
+					<CustomIconButton icon={<IoMenu size='1.7rem' />} aria-label='Menu' />
 				</Flex>
 
 				<Flex
@@ -67,13 +64,13 @@ const NavTopSection: FC<NavTopSectionProps> = ({...props}) => {
 					<Flex gap={2} alignItems='center'>
 						<CustomIconButton
 							icon={<VscAccount size='1.5rem' />}
-							display={{ base: 'none', lg: 'flex' }}
+							display={{ base: 'none', xl: 'flex' }}
 							aria-label='Account'
 						/>
 						<CustomIconButton
 							icon={<FaRegHeart size='1.5rem' />}
 							variant='badge'
-							display={{ base: 'none', lg: 'flex' }}
+							display={{ base: 'none', xl: 'flex' }}
 							aria-label='Whishlist'
 						/>
 						<CustomIconButton
@@ -85,7 +82,7 @@ const NavTopSection: FC<NavTopSectionProps> = ({...props}) => {
 						<Text
 							fontSize='1rem'
 							fontWeight='700'
-							display={{ base: 'none', lg: 'flex' }}
+							display={{ base: 'none', xl: 'flex' }}
 						>
 							{symbol.TAKA} 420
 						</Text>

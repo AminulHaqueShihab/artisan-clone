@@ -4,13 +4,14 @@ import NavItem from './NavItem';
 import { motion } from 'framer-motion';
 import { CATEGORIES } from '@/components/data/NavItemsdata';
 import MenuItems from './MenuItems';
+import { layout } from '@/lib/config';
 
 type NavBottomSectionProps = FlexProps & {};
 
 const NavBottomSection: FC<NavBottomSectionProps> = ({ ...props }) => {
 	
 	const menuItems = (
-		<Flex maxW='1320px' mx='auto' gap={8} alignItems='center' px={2}>
+		<Flex maxW={layout.MAX_WIDTH} mx='auto' gap={8} wrap={{base:'wrap', lg:'nowrap'}} alignItems='center' px={2}>
 			{CATEGORIES.map(category => (
 				<>
 					{category.subcategories ? (
@@ -49,7 +50,7 @@ const NavBottomSection: FC<NavBottomSectionProps> = ({ ...props }) => {
 			{...props}
 		>
 			{/* {menuItems} */}
-			<MenuItems maxW='1320px' mx='auto' />
+			<MenuItems maxW={layout.MAX_WIDTH} mx='auto' />
 		</Flex>
 	);
 };

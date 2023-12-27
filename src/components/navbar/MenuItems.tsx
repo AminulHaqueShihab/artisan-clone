@@ -7,7 +7,7 @@ type MenuItemsProps = FlexProps & {};
 
 const MenuItems: FC<MenuItemsProps> = ({ ...props }) => {
 	return (
-		<Flex gap={8} alignItems='center' px={2} {...props}>
+		<Flex gap={7} alignItems='center' justify='space-between' wrap={{base: 'wrap',lg:'nowrap'}} px={2} {...props}>
 			{CATEGORIES.map(category => (
 				<>
 					{category.subcategories ? (

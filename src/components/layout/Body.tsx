@@ -13,6 +13,7 @@ const Body: FC<BodyProps> = ({ children, ...props }) => {
 			maxW='1280px'
 			mx='auto'
 			px={{ base: '1rem', md: '2rem' }}
+			py={{ base: '1rem', md: '2rem' }}
 			{...props}
 		>
 			{children}
