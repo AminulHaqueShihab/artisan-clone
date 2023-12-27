@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import React, { FC } from 'react';
 
 type CustomIconButtonProps = IconButtonProps & {
-	variant?: 'badge';
+	variant?: 'badge' | 'productIcon';
 	icon: React.ReactNode;
 };
 
@@ -49,6 +49,18 @@ const CustomIconButton: FC<CustomIconButtonProps> = ({
 						0
 					</Badge>
 				</Box>
+			)}
+			{variant === 'productIcon' && (
+				<IconButton
+					icon={icon}
+					bg='white'
+					border={'1px solid black'}
+					color={'black'}
+					borderRadius='0rem'
+					variant='outline'
+					_hover={{ bg: 'black', color: 'white' }}
+					{...props}
+				/>
 			)}
 		</>
 	);
