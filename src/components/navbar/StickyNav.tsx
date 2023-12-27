@@ -38,7 +38,7 @@ const StickyNav: FC<StickyNavProps> = ({ ...props }) => {
 				templateColumns='1fr 1fr 1fr'
 				justifyContent='center'
 				p={{ base: '1rem 1rem', lg: '1.25rem 1rem' }}
-				maxW='1330px'
+				maxW={layout.MAX_WIDTH}
 				mx='auto'
 			>
 				<Flex justify='flex-start' alignItems='center'>

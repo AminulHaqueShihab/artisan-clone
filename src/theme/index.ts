@@ -28,6 +28,7 @@ const colors = {
 	greenButton: '#329450',
 	buttonText: '#FFFFFF',
 	lightText: '#FFFFFF',
+	green: {},
 };
 
 const skeletonTheme = defineStyleConfig({});
@@ -38,13 +39,17 @@ const components = {
 			borderRadius: '4px',
 		},
 		variants: {
-			// scan: {
-			// 	fontSize: '18px',
-			// 	fontWeight: '500',
-			// 	borderRadius: '16px',
-			// 	bg: 'primary.500',
-			// 	color: 'white',
-			// },
+			primary: {
+				fontSize: '1rem',
+				fontWeight: '700',
+				borderRadius: '4px',
+				bg: 'primary',
+				with: 'full',
+				_hover: {
+					bg: 'primaryHover',
+				},
+				color: 'white',
+			},
 		},
 	},
 	Heading: {
