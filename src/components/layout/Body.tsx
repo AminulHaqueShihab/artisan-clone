@@ -6,15 +6,13 @@ type BodyProps = FlexProps & {
 	children: ReactNode;
 };
 const Body: FC<BodyProps> = ({ children, ...props }) => {
-	
 	return (
 		<Flex
 			as='main'
 			bg='white'
-			w='full'
 			maxW='1280px'
 			mx='auto'
-			px={{ base: '1rem', lg: '1.25rem' }}
+			px={{ base: '1rem', md: '2rem' }}
 			{...props}
 		>
 			{children}
