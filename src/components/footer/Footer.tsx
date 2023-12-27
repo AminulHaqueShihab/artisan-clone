@@ -22,7 +22,8 @@ import {
 } from 'react-icons/fa';
 import CustomIconButton from '../util/CustomIconButton';
 import Link from 'next/link';
-import footerData from '../data/FooterData';
+import { footerData } from '../data/FooterData';
+
 
 type FooterProps = {};
 

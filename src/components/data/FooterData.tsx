@@ -1,12 +1,9 @@
-type footerDataProps = {
+type FooterDataProps = {
 	title: string;
-	items: {
-		title: string;
-		href: string;
-	}[];
+	items: { title: string; href: string }[];
 };
 
-const footerData: footerDataProps[] = [
+export const footerData: FooterDataProps[] = [
 	{
 		title: 'CATEGORIES',
 		items: [
@@ -54,5 +51,3 @@ const footerData: footerDataProps[] = [
 		],
 	},
 ];
-
-export default footerData;
