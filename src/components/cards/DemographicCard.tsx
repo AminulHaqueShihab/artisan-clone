@@ -15,7 +15,7 @@ const DemographicCard: FC<DemographicCardProps> = ({ image, ...props }) => {
 			bgColor='white'
 			{...props}
 		>
-			<Image maxH='350px' src={image} objectFit='cover' userSelect='none' />
+			<Image maxH='350px' src={image} objectFit='contain' userSelect='none' />
 		</Flex>
 	);
 };
