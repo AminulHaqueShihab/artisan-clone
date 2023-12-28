@@ -17,7 +17,7 @@ import { FaRegHeart } from 'react-icons/fa';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
 import { CiSearch } from 'react-icons/ci';
 import { layout, symbol } from '@/lib/config';
-import CustomIconButton from '../util/CustomIconButton';
+import CustomIconButton from '../util/buttons/CustomIconButton';
 import NavTopSection from './NavTopSection';
 import NavBottomSection from './NavBottomSection';
 import StickyNav from './StickyNav';

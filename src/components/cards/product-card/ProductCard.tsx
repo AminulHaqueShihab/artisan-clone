@@ -1,16 +1,23 @@
 import Column from '@/components/util/Column';
-import CustomButton from '@/components/util/CustomButton';
-import CustomIconButton from '@/components/util/CustomIconButton';
+import CustomButton from '@/components/util/buttons/CustomButton';
+import CustomIconButton from '@/components/util/buttons/CustomIconButton';
 import { symbol } from '@/lib/config';
 import { Box, Divider, Flex, Image, Text } from '@chakra-ui/react';
-import React, { FC, useState } from 'react';
+import React, { FC, useEffect, useRef, useState } from 'react';
 import { FaEye, FaHeart } from 'react-icons/fa';
 
 type ProductCardProps = {};
 
 const ProductCard: FC<ProductCardProps> = ({}) => {
+	const [src, setSrc] = useState('/images/products/product1-1.jpg');
 	const [isHovered, setIsHovered] = useState(false);
+	const imgRef = useRef<HTMLImageElement | null>(null);
 
+	useEffect(() => {
+		if (imgRef.current) {
+			console.log('Image height:', imgRef.current.height);
+		}
+	}, [src]);
 	return (
 		<Column
 			gap={2}
@@ -22,8 +29,8 @@ const ProductCard: FC<ProductCardProps> = ({}) => {
 				position='relative'
 				flex={1}
 				zIndex={0}
-				minH={{ base: '520px', lg: '360px' }}
-				h='full'
+				// h='100%'
+				minH={{ base: '500px', md: '360px' }}
 				w='full'
 				bg='red'
 				overflow='hidden'
@@ -36,7 +43,6 @@ const ProductCard: FC<ProductCardProps> = ({}) => {
 					left={2}
 					zIndex={6}
 					bg='white'
-				
 				>
 					<CustomIconButton
 						icon={<FaHeart size='1.2rem' />}
@@ -53,25 +59,36 @@ const ProductCard: FC<ProductCardProps> = ({}) => {
 				<Column
 					position='absolute'
 					top={isHovered ? '-100%' : '0'}
-					transition='top 0.3s ease-in'
+					transition='top 1s ease-out'
 					w='100%'
 					h='200%'
 					bg='blue'
 				>
-					<Image
-						src={'/images/products/product1-1.jpg'}
-						alt='Image 1'
-						w='100%'
-						h='100%'
-						objectFit='cover'
-					/>
-					<Image
-						src={'/images/products/product1-2.jpg'}
-						alt='Image 2'
-						w='100%'
-						h='100%'
-						objectFit='cover'
-					/>
+					<Box w='100%' h='50%' position='relative' overflow='hidden'>
+						<Image
+							ref={imgRef}
+							src={'/images/products/product1-1.jpg'}
+							alt='Image 1'
+							width='100%'
+							height='100%'
+							objectFit='cover'
+							position='absolute'
+							top='0'
+							left='0'
+						/>
+					</Box>
+					<Box w='100%' h='50%' position='relative' overflow='hidden'>
+						<Image
+							src={'/images/products/product1-3.jpg'}
+							alt='Image 2'
+							width='100%'
+							height='100%'
+							objectFit='cover'
+							position='absolute'
+							top='0'
+							left='0'
+						/>
+					</Box>
 				</Column>
 				<CustomButton
 					label='View Details'

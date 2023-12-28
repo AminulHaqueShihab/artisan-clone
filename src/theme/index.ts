@@ -22,6 +22,7 @@ const colors = {
 	darkPrimary: '#186A42',
 	footer: '#252525',
 	footerText: '#B0B0B0',
+	inputBorder: '#EBEBEB',
 	text: '#000000',
 	slate: '#333333',
 	blackButton: '#000000',

@@ -17,7 +17,7 @@ import { AiOutlineShoppingCart } from 'react-icons/ai';
 import { IoMenu, IoSearch } from 'react-icons/io5';
 import { CiSearch } from 'react-icons/ci';
 import { layout, symbol } from '@/lib/config';
-import CustomIconButton from '../util/CustomIconButton';
+import CustomIconButton from '../util/buttons/CustomIconButton';
 import NavSearch from './NavSearch';
 import MenuItems from './MenuItems';
 import { motion } from 'framer-motion';
@@ -29,9 +29,9 @@ const StickyNav: FC<StickyNavProps> = ({ ...props }) => {
 		<Box
 			as={motion.nav}
 			bg='white'
-			initial={{ y: -100 }}
-			animate={{ y: 0 }}
-			transition={{ ease: 'easeIn' } as any}
+			initial={{ opacity: 0 }}
+			animate={{ opacity: 100 }}
+			transition={{ duration: '0.5s', ease: 'ease-in-out' } as any}
 			{...props}
 		>
 			<Grid

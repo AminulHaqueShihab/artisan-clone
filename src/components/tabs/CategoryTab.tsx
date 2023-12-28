@@ -11,9 +11,9 @@ const CategoryTab: FC<CategoryTabProps> = ({ data, ...props }) => {
     setActiveTab(!activeTab)
   }
 	return (
-		<Flex gap={4} flex={1}>
+		<Flex gap={4} wrap='wrap' justify='center'>
 			{data?.map((item: any) => (
-				<Button variant='tabButton' isActive={activeTab} onClick={()=>handleActive}>{item.label}</Button>
+				<Button w='auto' variant='tabButton' isActive={activeTab} onClick={()=>handleActive}>{item.label}</Button>
 			))}
 		</Flex>
 	);

@@ -1,5 +1,6 @@
 import ProductCard from '@/components/cards/product-card/ProductCard';
 import Column from '@/components/util/Column';
+import SectionHeading from '@/components/util/headings/SectionHeading';
 import { Grid, Heading } from '@chakra-ui/react';
 import React, { FC } from 'react';
 
@@ -8,7 +9,7 @@ type FeaturedProductSectionProps = {};
 const FeaturedProductSection: FC<FeaturedProductSectionProps> = ({}) => {
 	return (
 		<Column gap='2rem' alignItems='center' w='full'>
-			<Heading fontSize='3rem'>Featured Products</Heading>
+			<SectionHeading title='Featured Products' />
 			<Grid
 				w='full'
 				gap={2}

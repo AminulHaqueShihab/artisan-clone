@@ -17,9 +17,10 @@ import { AiOutlineShoppingCart } from 'react-icons/ai';
 import { IoMenu, IoSearch } from 'react-icons/io5';
 import { CiSearch } from 'react-icons/ci';
 import { layout, symbol } from '@/lib/config';
-import CustomIconButton from '../util/CustomIconButton';
+import CustomIconButton from '../util/buttons/CustomIconButton';
 import NavSearch from './NavSearch';
 import { motion } from 'framer-motion';
+import LoginPopover from '../popovers/LoginPopover';
 
 type NavTopSectionProps = BoxProps & {};
 
@@ -29,9 +30,9 @@ const NavTopSection: FC<NavTopSectionProps> = ({ ...props }) => {
 			{...props}
 			as={motion.nav}
 			bg='white'
-			initial={{ y: -100 }}
-			animate={{ y: 0 }}
-			transition={{ ease: 'easeIn' } as any}
+			// initial={{ y: -100 }}
+			// animate={{ y: 0 }}
+			// transition={{ ease: 'easeIn' } as any}
 		>
 			<Grid
 				templateColumns='1fr 1fr 1fr'
@@ -62,11 +63,17 @@ const NavTopSection: FC<NavTopSectionProps> = ({ ...props }) => {
 					justify='flex-end'
 				>
 					<Flex gap={2} alignItems='center'>
-						<CustomIconButton
-							icon={<VscAccount size='1.5rem' />}
-							display={{ base: 'none', xl: 'flex' }}
-							aria-label='Account'
+						<LoginPopover
+							button={
+								<CustomIconButton
+									icon={<VscAccount size='1.5rem' />}
+									display={{ base: 'none', xl: 'flex' }}
+									aria-label='Account'
+									h={'1rem'}
+								/>
+							}
 						/>
+
 						<CustomIconButton
 							icon={<FaRegHeart size='1.5rem' />}
 							variant='badge'

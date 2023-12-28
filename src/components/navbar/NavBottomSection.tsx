@@ -46,7 +46,7 @@ const NavBottomSection: FC<NavBottomSectionProps> = ({ ...props }) => {
 			py='0.75rem'
 			display={{ base: 'none', lg: 'flex' }}
 			justify='center'
-			zIndex={99}
+			zIndex={3}
 			{...props}
 		>
 			{/* {menuItems} */}
