@@ -2,11 +2,11 @@ import { Flex, Image } from '@chakra-ui/react';
 import React, { FC } from 'react';
 
 type ModelCardProps = {
-  src?: string;
-  alt?: string;
+	src?: string;
+	alt?: string;
 };
 
-const ModelCard: FC<ModelCardProps> = ({src, alt}) => {
+const ModelCard: FC<ModelCardProps> = ({ src, alt }) => {
 	const [isHovered, setIsHovered] = React.useState(false);
 
 	return (
@@ -16,8 +16,11 @@ const ModelCard: FC<ModelCardProps> = ({src, alt}) => {
 			onMouseLeave={() => setIsHovered(false)}
 			h='100%'
 			w='100%'
+			flex={1}
 		>
 			<Image
+				h='100%'
+				w='100%'
 				cursor='pointer'
 				src={src ? src : ''}
 				objectFit='cover'

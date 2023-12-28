@@ -29,27 +29,14 @@ const ModelsSection: FC<ModelsSectionProps> = ({}) => {
 			w='full'
 			position='relative'
 			gap={3}
+			justifyContent='center'
+			alignItems='center'
+			flex={1}
 		>
 			{ModelsData.map(model => (
-				<Link href={model.href}>
           <ModelCard src={model.image} alt={model.alt} />
-        </Link>
+       
 			))}
-
-			{/* <Link href='/'>
-				<Image
-					onMouseEnter={() => setIsHovered(true)}
-					onMouseLeave={() => setIsHovered(false)}
-					cursor='pointer'
-					src='/images/models/female-model-1.jpg'
-					transition='transform 0.3s ease-in-out'
-					transform={isHovered ? 'scale(1.1)' : 'scale(1)'}
-					objectFit='cover'
-					alt='Models banner'
-					h='100%'
-					w='100%'
-				/>
-			</Link> */}
 		</Grid>
 	);
 };

@@ -1,5 +1,6 @@
 import ProductCard from '@/components/cards/product-card/ProductCard';
 import Column from '@/components/util/Column';
+import SectionHeading from '@/components/util/headings/SectionHeading';
 import { Grid, Heading } from '@chakra-ui/react';
 import React, { FC } from 'react';
 
@@ -8,7 +9,7 @@ type BestSellingSectionProps = {};
 const BestSellingSection: FC<BestSellingSectionProps> = ({}) => {
 	return (
 		<Column gap='2rem' alignItems='center' w='full'>
-			<Heading fontSize='3rem'>Best Selling</Heading>
+			<SectionHeading title='Best Selling' />
 			<Grid
 				w='full'
 				gap={2}

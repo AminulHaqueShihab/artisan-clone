@@ -1,6 +1,6 @@
 import { Flex, FlexProps, Image } from '@chakra-ui/react';
 import React, { FC, useState } from 'react';
-import CustomButton from '../util/CustomButton';
+import CustomButton from '../util/buttons/CustomButton';
 
 type DemographicCardProps = FlexProps & {
 	data?: any;
@@ -24,7 +24,7 @@ const DemographicCard: FC<DemographicCardProps> = ({ data, ...props }) => {
 				maxH='350px'
 				src={data?.image ? data.image : ''}
 				objectFit='cover'
-				transition='transform 0.3s ease-in-out'
+				transition='transform 0.5s ease-in-out'
 				transform={isHovered ? 'scale(1.1)' : 'scale(1)'}
 				w='100%'
 				h='100%'
