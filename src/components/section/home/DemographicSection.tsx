@@ -1,6 +1,7 @@
 import DemographicCard from '@/components/cards/DemographicCard';
 import { demographicData } from '@/components/data/DemographicData';
 import Column from '@/components/util/Column';
+import CustomButton from '@/components/util/buttons/CustomButton';
 import { Button, Grid } from '@chakra-ui/react';
 import React, { FC } from 'react';
 
@@ -19,9 +20,10 @@ const DemographicSection: FC<DemographicSectionProps> = ({}) => {
 					<DemographicCard data={item} bg={'yellow'} />
 				))}
 			</Grid>
-			<Button variant='primary' w='8rem' size='lg'>
+			<CustomButton variant='key-cap' label='Shop Now' />
+			{/* <Button variant='primary' w='8rem' size='lg'>
 				Shop Now
-			</Button>
+			</Button> */}
 		</Column>
 	);
 };
