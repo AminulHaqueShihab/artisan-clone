@@ -49,7 +49,7 @@ const LoginPopover: FC<LoginPopoverProps> = ({ button, ...props }) => {
 					borderTop='3px solid'
 					borderTopColor='#F44336'
 					borderRadius='0rem'
-					zIndex={9999}
+					zIndex={99}
 					onMouseEnter={onOpen}
 					onMouseLeave={onClose}
 					position={'relative'}
