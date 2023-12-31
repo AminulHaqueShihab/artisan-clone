@@ -22,10 +22,50 @@ import NavSearch from './NavSearch';
 import MenuItems from './MenuItems';
 import { motion } from 'framer-motion';
 import Logo from './Logo';
+import LoginPopover from '../popovers/LoginPopover';
+import Cart from '../cart/Cart';
 
 type StickyNavProps = BoxProps & {};
 
 const StickyNav: FC<StickyNavProps> = ({ ...props }) => {
+	const leftItems = (
+		<Flex justify='flex-start' alignItems='center'>
+			<Logo maxH='3rem' />
+		</Flex>
+	);
+	const rightItems = (
+		<Flex justify='flex-end'>
+			<Flex alignItems='center'>
+				<CustomIconButton icon={<IoSearch size='24px' />} aria-label='Search' />
+				<LoginPopover
+					button={
+						<CustomIconButton
+							icon={<VscAccount size='1.5rem' />}
+							display={{ base: 'none', lg: 'flex' }}
+							aria-label='Account'
+							h={'1rem'}
+						/>
+					}
+				/>
+
+				<CustomIconButton
+					icon={<FaRegHeart size='1.5rem' />}
+					variant='badge'
+					display={{ base: 'none', lg: 'flex' }}
+					aria-label='Wishlist'
+				/>
+				<Cart
+					button={
+						<CustomIconButton
+							icon={<AiOutlineShoppingCart size='1.5rem' />}
+							variant='badge'
+							aria-label='Cart'
+						/>
+					}
+				/>
+			</Flex>
+		</Flex>
+	);
 	return (
 		<Box
 			as={motion.nav}
@@ -42,35 +82,9 @@ const StickyNav: FC<StickyNavProps> = ({ ...props }) => {
 				maxW={layout.MAX_WIDTH}
 				mx='auto'
 			>
-				<Flex justify='flex-start' alignItems='center'>
-					<Logo maxH='3rem' />
-					{/* <Heading fontSize='1.5rem'>ARTISAN</Heading> */}
-				</Flex>
+				{leftItems}
 				<MenuItems justify='center' />
-				<Flex justify='flex-end'>
-					<Flex alignItems='center'>
-						<CustomIconButton
-							icon={<IoSearch size='24px' />}
-							aria-label='Search'
-						/>
-						<CustomIconButton
-							icon={<VscAccount size='1.5rem' />}
-							display={{ base: 'none', lg: 'flex' }}
-							aria-label='Account'
-						/>
-						<CustomIconButton
-							icon={<FaRegHeart size='1.5rem' />}
-							variant='badge'
-							display={{ base: 'none', lg: 'flex' }}
-							aria-label='Whishlist'
-						/>
-						<CustomIconButton
-							icon={<AiOutlineShoppingCart size='1.5rem' />}
-							variant='badge'
-							aria-label='Cart'
-						/>
-					</Flex>
-				</Flex>
+				{rightItems}
 			</Grid>
 		</Box>
 	);

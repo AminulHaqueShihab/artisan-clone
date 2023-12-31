@@ -3,7 +3,7 @@ import './globals.css';
 import Providers from '@/components/providers/Providers';
 
 export const metadata: Metadata = {
-	title: 'Artisan Clone',
+	title: 'Urban Stitch',
 	description:
 		'This is a clone of Artisan. Made for educational purposes only.',
 };
