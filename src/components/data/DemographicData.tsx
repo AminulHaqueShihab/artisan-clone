@@ -21,3 +21,24 @@ export const demographicData: demographicDataProps[] = [
 		title: 'Girls',
 	},
 ];
+type modelsDataProps = {
+	id: string;
+	image: string;
+	alt: string;
+	href: string;
+}
+
+export const modelsData:modelsDataProps[] = [
+	{
+		id: '1',
+		image: '/images/models/male-model-1.jpg',
+		alt: 'Male Model banner',
+		href: '/',
+	},
+	{
+		id: '2',
+		image: '/images/models/female-model-1.jpg',
+		alt: 'Female Model banner',
+		href: '/',
+	},
+];

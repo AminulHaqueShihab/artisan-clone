@@ -13,3 +13,8 @@ export const layout = {
 	MAX_WIDTH: '1280px',
 	MAX_WIDTH_NAV: '1280px',
 }
+
+export const sidebar = {
+	MIN_WIDTH:'260px',
+	zIndex: 9999,
+}

@@ -2,7 +2,7 @@ import { Button, ButtonProps, Flex } from '@chakra-ui/react';
 import React, { FC } from 'react';
 
 type CustomButtonProps = ButtonProps & {
-	variant?: 'demographic' | 'add-to-cart' | 'key-cap' | 'bnw';
+	variant?: 'demographic' | 'add-to-cart' | 'key-cap' | 'bnw' | 'outline';
 	label: string;
 };
 
@@ -28,6 +28,19 @@ const CustomButton: FC<CustomButtonProps> = ({ variant, label, ...props }) => {
 					bg='footer'
 					_hover={{ bg: 'primary' }}
 					color='white'
+					borderRadius='0rem'
+					{...props}
+				>
+					{label}
+				</Button>
+			)}
+			{variant === 'outline' && (
+				<Button
+					w='full'
+					bg='white'
+					_hover={{ bg: 'primary', border: 'none', color: 'white' }}
+					border='2px solid black'
+					color='black'
 					borderRadius='0rem'
 					{...props}
 				>

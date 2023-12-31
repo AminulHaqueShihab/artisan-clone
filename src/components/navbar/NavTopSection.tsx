@@ -5,9 +5,11 @@ import {
 	Grid,
 	GridItem,
 	Heading,
+	Image,
 	Input,
 	InputGroup,
 	InputLeftElement,
+	Show,
 	Text,
 } from '@chakra-ui/react';
 import React, { FC } from 'react';
@@ -19,21 +21,85 @@ import { CiSearch } from 'react-icons/ci';
 import { layout, symbol } from '@/lib/config';
 import CustomIconButton from '../util/buttons/CustomIconButton';
 import NavSearch from './NavSearch';
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import LoginPopover from '../popovers/LoginPopover';
+import Sidebar from '../sidebar/Sidebar';
+import Logo from './Logo';
+import Cart from '../cart/Cart';
 
 type NavTopSectionProps = BoxProps & {};
 
 const NavTopSection: FC<NavTopSectionProps> = ({ ...props }) => {
+	const leftItems = (
+		<>
+			<NavSearch display={{ base: 'none', xl: 'flex' }} />
+
+			<Flex
+				justify='flex-start'
+				alignItems='center'
+				display={{ base: 'flex', xl: 'none' }}
+			>
+				<Sidebar
+					button={
+						<CustomIconButton
+							icon={<IoMenu size='1.7rem' />}
+							aria-label='Menu'
+						/>
+					}
+				/>
+			</Flex>
+		</>
+	);
+
+	const middleItems = (
+		<Flex justifyContent='center' alignItems='center'>
+			<Logo maxH={{ base: '3rem', lg: '5rem' }} />
+			{/* <Heading fontSize={{ base: '1.5rem',md:'2.5rem', xl: '3rem' }}>URBAN STITCH</Heading> */}
+		</Flex>
+	);
+
+	const rightItems = (
+		<Flex justify='flex-end'>
+			<Flex gap={2} alignItems='center'>
+				<LoginPopover
+					button={
+						<CustomIconButton
+							icon={<VscAccount size='1.5rem' />}
+							display={{ base: 'none', xl: 'flex' }}
+							aria-label='Account'
+							h={'1rem'}
+						/>
+					}
+				/>
+
+				<CustomIconButton
+					icon={<FaRegHeart size='1.5rem' />}
+					variant='badge'
+					display={{ base: 'none', xl: 'flex' }}
+					aria-label='Wishlist'
+				/>
+				<Cart
+					button={
+						<CustomIconButton
+							icon={<AiOutlineShoppingCart size='1.5rem' />}
+							variant='badge'
+							aria-label='Cart'
+						/>
+					}
+				/>
+
+				<Text
+					fontSize='1rem'
+					fontWeight='700'
+					display={{ base: 'none', xl: 'flex' }}
+				>
+					{symbol.TAKA} 420
+				</Text>
+			</Flex>
+		</Flex>
+	);
 	return (
-		<Box
-			{...props}
-			as={motion.nav}
-			bg='white'
-			// initial={{ y: -100 }}
-			// animate={{ y: 0 }}
-			// transition={{ ease: 'easeIn' } as any}
-		>
+		<Box {...props} as={motion.nav} bg='white'>
 			<Grid
 				templateColumns='1fr 1fr 1fr'
 				justifyContent='center'
@@ -41,60 +107,9 @@ const NavTopSection: FC<NavTopSectionProps> = ({ ...props }) => {
 				maxW={layout.MAX_WIDTH}
 				mx='auto'
 			>
-				<NavSearch display={{ base: 'none', xl: 'flex' }} />
-				<Flex
-					justify='flex-start'
-					alignItems='center'
-					display={{ base: 'flex', xl: 'none' }}
-				>
-					<CustomIconButton icon={<IoMenu size='1.7rem' />} aria-label='Menu' />
-				</Flex>
-
-				<Flex
-					// bg={'yellow'}
-					justifyContent='center'
-					alignItems='center'
-				>
-					<Heading fontSize={{ base: '2rem', lg: '3rem' }}>ARTISAN</Heading>
-				</Flex>
-
-				<Flex
-					//  bg='white'
-					justify='flex-end'
-				>
-					<Flex gap={2} alignItems='center'>
-						<LoginPopover
-							button={
-								<CustomIconButton
-									icon={<VscAccount size='1.5rem' />}
-									display={{ base: 'none', xl: 'flex' }}
-									aria-label='Account'
-									h={'1rem'}
-								/>
-							}
-						/>
-
-						<CustomIconButton
-							icon={<FaRegHeart size='1.5rem' />}
-							variant='badge'
-							display={{ base: 'none', xl: 'flex' }}
-							aria-label='Whishlist'
-						/>
-						<CustomIconButton
-							icon={<AiOutlineShoppingCart size='1.5rem' />}
-							variant='badge'
-							aria-label='Cart'
-						/>
-
-						<Text
-							fontSize='1rem'
-							fontWeight='700'
-							display={{ base: 'none', xl: 'flex' }}
-						>
-							{symbol.TAKA} 420
-						</Text>
-					</Flex>
-				</Flex>
+				{leftItems}
+				{middleItems}
+				{rightItems}
 			</Grid>
 		</Box>
 	);

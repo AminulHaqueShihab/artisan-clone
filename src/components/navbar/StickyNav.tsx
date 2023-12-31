@@ -21,6 +21,7 @@ import CustomIconButton from '../util/buttons/CustomIconButton';
 import NavSearch from './NavSearch';
 import MenuItems from './MenuItems';
 import { motion } from 'framer-motion';
+import Logo from './Logo';
 
 type StickyNavProps = BoxProps & {};
 
@@ -42,7 +43,8 @@ const StickyNav: FC<StickyNavProps> = ({ ...props }) => {
 				mx='auto'
 			>
 				<Flex justify='flex-start' alignItems='center'>
-					<Heading fontSize='1.5rem'>ARTISAN</Heading>
+					<Logo maxH='3rem' />
+					{/* <Heading fontSize='1.5rem'>ARTISAN</Heading> */}
 				</Flex>
 				<MenuItems justify='center' />
 				<Flex justify='flex-end'>
