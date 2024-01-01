@@ -7,24 +7,21 @@ const HeadBannerSection = ({}) => {
 	const banners = [
 		{
 			id: 1,
-			image: '/images/banners/new-winter-collection.cover_.jpg',
+			image:
+				'https://artisanclick.com/wp-content/uploads/2020/02/new-winter-collection.cover_.jpg',
 			title: 'New Winter Collection',
 			alt: 'New Winter Collection',
 		},
 		{
 			id: 2,
-			image: '/images/banners/gift-vouchers-20-off.png-cover.1.png',
-			title: 'Gift Vouchers 20% Off',
-			alt: 'Gift Vouchers 20% Off',
+			image:
+				'https://artisanclick.com/wp-content/uploads/2020/02/Artisan-31-greeting_0cover-copy.jpg',
+			title: 'Happy New Year',
+			alt: 'Happy New Year',
 		},
 	];
 	return (
-		<Flex
-			bg='white'
-      w='full'
-      maxW='1280px'
-      justify='center'
-		>
+		<Flex bg='white' w='full' maxW='1280px' justify='center'>
 			<HeaderCarousel data={banners} />
 		</Flex>
 	);
