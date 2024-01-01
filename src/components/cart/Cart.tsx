@@ -29,13 +29,18 @@ const Cart: FC<CartProps> = ({ button }) => {
 	return (
 		<>
 			<Flex onClick={onOpen}>{button}</Flex>
-			<Drawer placement='right' size={{base:'xs',lg:'sm'}} onClose={onClose} isOpen={isOpen}>
+			<Drawer
+				placement='right'
+				size={{ base: 'xs', lg: 'sm' }}
+				onClose={onClose}
+				isOpen={isOpen}
+			>
 				<DrawerOverlay />
 				<DrawerContent>
 					<DrawerCloseButton
 						_hover={{
 							bg: 'transparent',
-							transform: 'rotate(90deg) scale(1.2)',
+							transform: 'rotate(90deg) scale(1.5)',
 							transition: 'transform 0.3s ease-in-out',
 						}}
 					/>
@@ -44,12 +49,14 @@ const Cart: FC<CartProps> = ({ button }) => {
 					</DrawerHeader>
 					<DrawerBody fontSize='1rem'></DrawerBody>
 					<DrawerFooter
-						borderTop='1px solid'
+						zIndex={999}
+						// borderTop='1px solid'
 						borderColor='primary'
 						alignItems='center'
 						justifyItems='center'
 						flexDirection='column'
-            py='1.5rem'
+						boxShadow='0px -2px 10px rgba(0, 0, 0, 0.25)'
+						py='1.5rem'
 						gap={4}
 					>
 						<Flex
@@ -69,7 +76,11 @@ const Cart: FC<CartProps> = ({ button }) => {
 						>
 							Checkout
 						</Button>
-						<CustomButton variant='outline' label='View Cart' rightIcon={<MdOutlineShoppingCartCheckout/>} />
+						<CustomButton
+							variant='outline'
+							label='View Cart'
+							rightIcon={<MdOutlineShoppingCartCheckout />}
+						/>
 					</DrawerFooter>
 				</DrawerContent>
 			</Drawer>

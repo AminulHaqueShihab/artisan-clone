@@ -26,6 +26,7 @@ import LoginPopover from '../popovers/LoginPopover';
 import Sidebar from '../sidebar/Sidebar';
 import Logo from './Logo';
 import Cart from '../cart/Cart';
+import Link from 'next/link';
 
 type NavTopSectionProps = BoxProps & {};
 
@@ -61,16 +62,18 @@ const NavTopSection: FC<NavTopSectionProps> = ({ ...props }) => {
 	const rightItems = (
 		<Flex justify='flex-end'>
 			<Flex gap={2} alignItems='center'>
-				<LoginPopover
-					button={
-						<CustomIconButton
-							icon={<VscAccount size='1.5rem' />}
-							display={{ base: 'none', xl: 'flex' }}
-							aria-label='Account'
-							h={'1rem'}
-						/>
-					}
-				/>
+				<Link href='/my-account'>
+					<LoginPopover
+						button={
+							<CustomIconButton
+								icon={<VscAccount size='1.5rem' />}
+								display={{ base: 'none', xl: 'flex' }}
+								aria-label='Account'
+								h={'1rem'}
+							/>
+						}
+					/>
+				</Link>
 
 				<CustomIconButton
 					icon={<FaRegHeart size='1.5rem' />}

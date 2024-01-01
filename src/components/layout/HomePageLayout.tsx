@@ -46,7 +46,8 @@ const HomePageLayout: FC<HomePageLayoutProps> = ({ children, ...props }) => {
 			) : (
 				<Navbar zIndex={6} />
 			)}
-			<Body>{children}</Body>
+			{children}
+			{/* <Body>{children}</Body> */}
 			<Footer />
 		</>
 	);
