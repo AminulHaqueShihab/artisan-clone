@@ -3,6 +3,7 @@ import CustomButton from '@/components/util/buttons/CustomButton';
 import CustomIconButton from '@/components/util/buttons/CustomIconButton';
 import { symbol } from '@/lib/config';
 import { Box, Divider, Flex, Image, Text } from '@chakra-ui/react';
+import { useRouter } from 'next/navigation';
 import React, { FC, useEffect, useRef, useState } from 'react';
 import { FaEye, FaHeart } from 'react-icons/fa';
 
@@ -12,6 +13,7 @@ const ProductCard: FC<ProductCardProps> = ({}) => {
 	const [src, setSrc] = useState('/images/products/product1-1.jpg');
 	const [isHovered, setIsHovered] = useState(false);
 	const imgRef = useRef<HTMLImageElement | null>(null);
+	const router = useRouter();
 
 	useEffect(() => {
 		if (imgRef.current) {
@@ -97,6 +99,7 @@ const ProductCard: FC<ProductCardProps> = ({}) => {
 					bottom={isHovered ? '0' : '-100'}
 					zIndex={3}
 					transition={'bottom 0.3s ease-in'}
+					onClick={() => router.push('/product')}
 				/>
 			</Column>
 			<Column

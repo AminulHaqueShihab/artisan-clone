@@ -1,3 +1,4 @@
+'use client'
 import { Flex } from '@chakra-ui/react';
 import React, { FC, useEffect, useState } from 'react';
 import Body from './Body';

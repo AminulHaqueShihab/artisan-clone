@@ -9,13 +9,16 @@ type AuthSectionProps = {};
 const AuthSection: FC<AuthSectionProps> = ({}) => {
 	return (
 		<Grid
-			templateColumns='1fr 1fr'
+			templateColumns={{ base: '1fr', lg: '1fr 1fr' }}
 			w='full'
 			// gap={10}
-			py='3rem'
+			py={{ base: '1rem', md: '3rem' }}
 			// bg='yellow'
 		>
-			<Login borderRight='1px solid' borderColor='gray.100' />
+			<Login
+				borderRight={{ lg: '1px solid' }}
+				borderColor={{ lg: 'gray.100' }}
+			/>
 			<Register />
 		</Grid>
 	);

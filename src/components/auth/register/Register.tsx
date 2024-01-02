@@ -8,7 +8,7 @@ type RegisterProps = {};
 
 const Register: FC<RegisterProps> = ({}) => {
 	return (
-		<Column p='3rem 4rem' gap={5}>
+		<Column p={{ base: '2rem 1rem', md: '3rem 4rem' }} gap={5}>
 			<AuthHeading title='Register' />
 			<CustomInput label='Username' required />
 			<CustomInput label='Email address' required />
@@ -19,7 +19,12 @@ const Register: FC<RegisterProps> = ({}) => {
 					this website, to manage access to your account, and for other purposes
 					described in our
 				</Text>
-				<Button alignSelf='flex-start' variant='link' color='primary' _hover={{}}>
+				<Button
+					alignSelf='flex-start'
+					variant='link'
+					color='primary'
+					_hover={{}}
+				>
 					Terms & conditions.
 				</Button>
 			</Column>

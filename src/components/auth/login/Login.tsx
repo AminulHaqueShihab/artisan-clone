@@ -8,17 +8,15 @@ type LoginProps = FlexProps & {};
 
 const Login: FC<LoginProps> = ({ ...props }) => {
 	return (
-		<Column px='4rem' gap={10} {...props}>
-			<Column p='3rem' gap={5} bg='box'>
+		<Column px={{ base: 'none', md: '4rem' }} gap={10} {...props}>
+			<Column p={{ base: '2rem', md: '3rem' }} gap={5} bg='box'>
 				<AuthHeading title='Login' />
 				<CustomInput label='Username or email address' required />
 				<CustomInput label='Password' required />
 				<Button variant='primary'>Log in</Button>
 			</Column>
 			<Flex justify='space-between' alignItems='center' color='subCategory'>
-				<Checkbox colorScheme='green'>
-					Remember me
-				</Checkbox>
+				<Checkbox colorScheme='green'>Remember me</Checkbox>
 				<Button
 					variant='link'
 					_hover={{ color: 'primary' }}
