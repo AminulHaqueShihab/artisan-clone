@@ -1,4 +1,5 @@
 'use client';
+import AuthSection from '@/components/auth/AuthSection';
 import HomePageLayout from '@/components/layout/HomePageLayout';
 import PageLayout from '@/components/layout/page-layout/PageLayout';
 import Column from '@/components/util/Column';
@@ -12,8 +13,8 @@ const MyAccount: NextPage<MyAccountProps> = ({}) => {
 	return (
 		<HomePageLayout>
 			<PageLayout>
-        <Text>My Account</Text>
-      </PageLayout>
+				<AuthSection />
+			</PageLayout>
 		</HomePageLayout>
 	);
 };

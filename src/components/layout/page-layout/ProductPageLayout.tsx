@@ -1,25 +1,27 @@
 import Column from '@/components/util/Column';
+import CustomBreadCrumb from '@/components/util/breadcrumb/CustomBreadCrumb';
 import { Flex, FlexProps, Heading } from '@chakra-ui/react';
 import React, { FC, ReactNode } from 'react';
 import Body from '../Body';
-import CustomBreadCrumb from '@/components/util/breadcrumb/CustomBreadCrumb';
 
-type PageLayoutProps = FlexProps & {
+type ProductPageLayoutProps = FlexProps & {
 	children: ReactNode;
 };
 
-const PageLayout: FC<PageLayoutProps> = ({ children, ...props }) => {
+const ProductPageLayout: FC<ProductPageLayoutProps> = ({
+	children,
+	...props
+}) => {
 	return (
-		<Column>
+		<Column {...props}>
 			<Flex
 				backgroundImage='images/banners/green-banner.png'
 				w='100vw'
-				maxH='340px'
-				py='5.5rem'
+				maxH='100px'
+				py='2rem'
 			>
 				{/* <Image w='full' h='full' src='/images/banners/green-banner.png' objectFit='cover' /> */}
 				<Column gap={4} mx='auto' justify='center' alignItems='center'>
-					<Heading color='white'>My Account</Heading>
 					<CustomBreadCrumb />
 				</Column>
 			</Flex>
@@ -28,4 +30,4 @@ const PageLayout: FC<PageLayoutProps> = ({ children, ...props }) => {
 	);
 };
 
-export default PageLayout;
+export default ProductPageLayout;

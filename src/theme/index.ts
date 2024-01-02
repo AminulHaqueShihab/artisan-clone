@@ -25,6 +25,8 @@ const colors = {
 	inputBorder: '#EBEBEB',
 	text: '#000000',
 	slate: '#333333',
+	box:'#F6F6F6',
+	divider:'#EBEBEB',
 	blackButton: '#000000',
 	subCategory: '#626262',
 	greenButton: '#329450',
