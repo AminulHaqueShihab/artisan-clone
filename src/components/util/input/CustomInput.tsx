@@ -4,22 +4,26 @@ import React, { FC } from 'react';
 type CustomInputProps = InputProps & {
 	label?: string;
 	placeholder?: string;
-  required?: boolean;
+	required?: boolean;
 };
 
 const CustomInput: FC<CustomInputProps> = ({
 	label,
 	placeholder,
-  required,
+	required,
 	...props
 }) => {
 	return (
-		<>
-			<FormControl isRequired={required? required : false}>
-        {label && <FormLabel>{label}</FormLabel>}
-				<Input placeholder={placeholder? placeholder:''} {...props} focusBorderColor='primary' borderRadius='0rem' />
-			</FormControl>
-		</>
+		<FormControl isRequired={required ? required : false}>
+			{label && <FormLabel>{label}</FormLabel>}
+			<Input
+				placeholder={placeholder ? placeholder : ''}
+				{...props}
+				focusBorderColor='primary'
+				borderRadius='0.25rem'
+				bg='white'
+			/>
+		</FormControl>
 	);
 };
 

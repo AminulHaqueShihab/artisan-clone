@@ -10,6 +10,7 @@ const Body: FC<BodyProps> = ({ children, ...props }) => {
 		<Flex
 			as='main'
 			bg='white'
+			w='full'
 			maxW='1280px'
 			mx='auto'
 			px={{ base: '1rem', md: '2rem' }}
