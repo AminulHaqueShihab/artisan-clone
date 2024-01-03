@@ -1,24 +1,24 @@
 import SingleProductCarousel from '@/components/carousel-items/SingleProductCarousel';
 import Column from '@/components/util/Column';
-import { Flex, GridItem } from '@chakra-ui/react';
+import CustomIconButton from '@/components/util/buttons/CustomIconButton';
+import { Box, Flex, GridItem } from '@chakra-ui/react';
 import React, { FC } from 'react';
+import { AiOutlineFullscreen } from 'react-icons/ai';
 
 type ProductImageProps = {};
 
 const ProductImage: FC<ProductImageProps> = ({}) => {
-
-const images = [
-	'https://swiperjs.com/demos/images/nature-1.jpg',
-	'https://swiperjs.com/demos/images/nature-2.jpg',
-	'https://swiperjs.com/demos/images/nature-3.jpg',
-	'https://swiperjs.com/demos/images/nature-4.jpg',
-	'https://swiperjs.com/demos/images/nature-5.jpg',
-	'https://swiperjs.com/demos/images/nature-6.jpg',
-];
+	const images = [
+		'https://i.dummyjson.com/data/products/15/1.jpg',
+		'https://i.dummyjson.com/data/products/15/2.jpg',
+		'https://i.dummyjson.com/data/products/15/3.jpg',
+		'https://i.dummyjson.com/data/products/15/4.jpg',
+		'https://i.dummyjson.com/data/products/15/thumbnail.jpg',
+	];
 
 	return (
-		<Flex w='full'>
-			<SingleProductCarousel images={images}/>
+		<Flex w='full' justify='center'>
+			<SingleProductCarousel images={images} />
 		</Flex>
 	);
 };

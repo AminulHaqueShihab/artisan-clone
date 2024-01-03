@@ -5,10 +5,18 @@ type SwiperProductImageProps = ImageProps & {
 	src?: string;
 };
 
-const SwiperProductImage: FC<SwiperProductImageProps> = ({ src }) => {
+const SwiperProductImage: FC<SwiperProductImageProps> = ({ src, ...props }) => {
 	return (
-		<Box flex={1}>
-			<Image h='100%' w='100%' objectFit='cover' src={src ? src : ''} />
+		<Box h='100%' w='100%' border='1px solid' borderColor='gray.200'>
+			<Image
+				objectFit='cover'
+				src={src ? src : ''}
+				h='100%'
+				w='100%'
+				userSelect='none'
+				cursor='pointer'
+				{...props}
+			/>
 		</Box>
 	);
 };

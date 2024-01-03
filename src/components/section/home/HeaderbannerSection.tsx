@@ -3,8 +3,8 @@ import React from 'react';
 import HeaderCarousel from '@/components/carousel-items/HeaderCarousel';
 import CoverImage from '@/components/images/CoverImage';
 
-const HeadBannerSection = ({}) => {
-	const banners = [
+const data = {
+	doc: [
 		{
 			id: 1,
 			image:
@@ -19,10 +19,13 @@ const HeadBannerSection = ({}) => {
 			title: 'Happy New Year',
 			alt: 'Happy New Year',
 		},
-	];
+	],
+};
+
+const HeadBannerSection = ({}) => {
 	return (
 		<Flex bg='white' w='full' maxW='1280px' justify='center'>
-			<HeaderCarousel data={banners} />
+			<HeaderCarousel data={data?.doc || []} />
 		</Flex>
 	);
 };
