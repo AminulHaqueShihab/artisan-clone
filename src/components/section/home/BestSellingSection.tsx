@@ -1,14 +1,14 @@
 import ProductCard from '@/components/cards/product-card/ProductCard';
 import Column from '@/components/util/Column';
 import SectionHeading from '@/components/util/headings/SectionHeading';
-import { Grid, Heading } from '@chakra-ui/react';
+import { FlexProps, Grid, Heading } from '@chakra-ui/react';
 import React, { FC } from 'react';
 
-type BestSellingSectionProps = {};
+type BestSellingSectionProps = FlexProps;
 
-const BestSellingSection: FC<BestSellingSectionProps> = ({}) => {
+const BestSellingSection: FC<BestSellingSectionProps> = ({ ...props }) => {
 	return (
-		<Column gap='2rem' alignItems='center' w='full'>
+		<Column gap='2rem' alignItems='center' w='full' {...props}>
 			<SectionHeading title='Best Selling' />
 			<Grid
 				w='full'

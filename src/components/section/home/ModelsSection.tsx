@@ -19,8 +19,8 @@ const ModelsSection: FC<ModelsSectionProps> = ({}) => {
 			alignItems='center'
 			flex={1}
 		>
-			{modelsData.map(model => (
-				<ModelCard src={model.image} alt={model.alt} />
+			{modelsData?.map(model => (
+				<ModelCard src={model?.image} alt={model?.alt} />
 			))}
 		</Grid>
 	);

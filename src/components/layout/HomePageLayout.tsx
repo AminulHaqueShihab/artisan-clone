@@ -35,13 +35,13 @@ const HomePageLayout: FC<HomePageLayoutProps> = ({ children, ...props }) => {
 						display={{ base: 'block', xl: 'none' }}
 						position='sticky'
 						top='0'
-						zIndex={6}
+						zIndex={999}
 					/>
 					<StickyNav
 						display={{ base: 'none', xl: 'block' }}
 						position='sticky'
 						top='0'
-						zIndex={3}
+						zIndex={99}
 					/>
 				</>
 			) : (

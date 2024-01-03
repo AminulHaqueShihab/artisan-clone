@@ -11,9 +11,13 @@ type ProductPageProps = {
 
 const ProductPage: NextPage<ProductPageProps> = ({}) => {
 	return (
-		<Column>
-      <ProductViewSection />
-    </Column>
+		<Column
+			alignItems='center'
+			w='full'
+			//  bg='blue.200'
+		>
+			<ProductViewSection />
+		</Column>
 	);
 };
 
