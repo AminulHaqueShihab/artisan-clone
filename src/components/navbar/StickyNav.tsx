@@ -25,9 +25,11 @@ import Logo from './Logo';
 import LoginPopover from '../popovers/LoginPopover';
 import Cart from '../cart/Cart';
 
-type StickyNavProps = BoxProps & {};
+type StickyNavProps = BoxProps & {
+	isScrolled?: boolean;
+};
 
-const StickyNav: FC<StickyNavProps> = ({ ...props }) => {
+const StickyNav: FC<StickyNavProps> = ({isScrolled, ...props }) => {
 	const leftItems = (
 		<Flex justify='flex-start' alignItems='center'>
 			<Logo maxH='3rem' />
@@ -70,9 +72,9 @@ const StickyNav: FC<StickyNavProps> = ({ ...props }) => {
 		<Box
 			as={motion.nav}
 			bg='white'
-			initial={{ opacity: 0 }}
-			animate={{ opacity: 100 }}
-			transition={{ duration: '0.5s', ease: 'ease-in-out' } as any}
+			initial={{ opacity: 0, y: -20 }}
+			animate={{ opacity: isScrolled ? 1 : 0, y: isScrolled ? 0 : -20 }}
+			transition={{ duration: 0.3 } as any}
 			{...props}
 		>
 			<Grid

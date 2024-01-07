@@ -74,13 +74,14 @@ const NavTopSection: FC<NavTopSectionProps> = ({ ...props }) => {
 						}
 					/>
 				</Link>
-
-				<CustomIconButton
-					icon={<FaRegHeart size='1.5rem' />}
-					variant='badge'
-					display={{ base: 'none', xl: 'flex' }}
-					aria-label='Wishlist'
-				/>
+				<Link href='/wishlist'>
+					<CustomIconButton
+						icon={<FaRegHeart size='1.5rem' />}
+						variant='badge'
+						display={{ base: 'none', xl: 'flex' }}
+						aria-label='Wishlist'
+					/>
+				</Link>
 				<Cart
 					button={
 						<CustomIconButton

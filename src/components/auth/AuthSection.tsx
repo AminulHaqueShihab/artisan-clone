@@ -12,7 +12,7 @@ const AuthSection: FC<AuthSectionProps> = ({}) => {
 			templateColumns={{ base: '1fr', lg: '1fr 1fr' }}
 			w='full'
 			// gap={10}
-			py={{ base: '1rem', md: '3rem' }}
+			py={{ base: '1rem', lg: '3rem' }}
 			// bg='yellow'
 		>
 			<Login

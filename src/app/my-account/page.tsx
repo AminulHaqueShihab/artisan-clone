@@ -12,7 +12,7 @@ type MyAccountProps = {};
 const MyAccount: NextPage<MyAccountProps> = ({}) => {
 	return (
 		<HomePageLayout>
-			<PageLayout>
+			<PageLayout title='My Account'>
 				<AuthSection />
 			</PageLayout>
 		</HomePageLayout>

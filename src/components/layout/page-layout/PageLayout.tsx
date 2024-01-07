@@ -6,20 +6,26 @@ import CustomBreadCrumb from '@/components/util/breadcrumb/CustomBreadCrumb';
 
 type PageLayoutProps = FlexProps & {
 	children: ReactNode;
+	title: string;
 };
 
-const PageLayout: FC<PageLayoutProps> = ({ children, ...props }) => {
+const PageLayout: FC<PageLayoutProps> = ({ children, title, ...props }) => {
 	return (
 		<Column>
 			<Flex
 				backgroundImage='images/banners/green-banner.png'
 				w='100vw'
-				maxH='340px'
-				py='5.5rem'
+				maxH={{ base: '120px', lg: '200px' }}
+				py={{ base: '2rem', lg: '5.5rem' }}
 			>
 				{/* <Image w='full' h='full' src='/images/banners/green-banner.png' objectFit='cover' /> */}
-				<Column gap={4} mx='auto' justify='center' alignItems='center'>
-					<Heading color='white'>My Account</Heading>
+				<Column
+					gap={{ base: 2, md: 4 }}
+					mx='auto'
+					justify='center'
+					alignItems='center'
+				>
+					<Heading color='white'>{title}</Heading>
 					<CustomBreadCrumb />
 				</Column>
 			</Flex>
