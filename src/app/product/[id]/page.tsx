@@ -1,4 +1,5 @@
 'use client';
+import InfoReviewSection from '@/components/section/product/InfoReviewSection';
 import ProductViewSection from '@/components/section/product/ProductViewSection';
 import Column from '@/components/util/Column';
 import { Flex, Grid, Text } from '@chakra-ui/react';
@@ -9,14 +10,12 @@ type ProductPageProps = {
 	params: { id: string };
 };
 
-const ProductPage: NextPage<ProductPageProps> = ({}) => {
+const ProductPage: NextPage<ProductPageProps> = ({ params }) => {
+	const { id } = params;
 	return (
-		<Column
-			alignItems='center'
-			w='full'
-			//  bg='blue.200'
-		>
+		<Column alignItems='center' w='full'>
 			<ProductViewSection />
+			<InfoReviewSection />
 		</Column>
 	);
 };

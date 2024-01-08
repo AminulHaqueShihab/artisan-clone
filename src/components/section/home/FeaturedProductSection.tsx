@@ -1,4 +1,5 @@
 import ProductCard from '@/components/cards/product-card/ProductCard';
+import { productData } from '@/components/data/ProductData';
 import Column from '@/components/util/Column';
 import SectionHeading from '@/components/util/headings/SectionHeading';
 import { Grid, Heading } from '@chakra-ui/react';
@@ -7,6 +8,9 @@ import React, { FC } from 'react';
 type FeaturedProductSectionProps = {};
 
 const FeaturedProductSection: FC<FeaturedProductSectionProps> = ({}) => {
+	const featuredProducts = productData?.doc
+		?.filter(product => product.isFeatured)
+		.slice(0, 5);
 	return (
 		<Column gap='2rem' alignItems='center' w='full'>
 			<SectionHeading title='Featured Products' />
@@ -19,11 +23,11 @@ const FeaturedProductSection: FC<FeaturedProductSectionProps> = ({}) => {
 					lg: '1fr 1fr 1fr 1fr 1fr',
 				}}
 			>
-				<ProductCard />
-				<ProductCard />
-				<ProductCard />
-				<ProductCard />
-				<ProductCard />
+				{featuredProducts?.map(product => (
+					<>
+						<ProductCard key={product.id} data={product} />
+					</>
+				))}
 			</Grid>
 		</Column>
 	);
