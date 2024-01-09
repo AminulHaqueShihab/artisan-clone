@@ -1,4 +1,5 @@
 'use client';
+import { productData } from '@/components/data/ProductData';
 import InfoReviewSection from '@/components/section/product/InfoReviewSection';
 import ProductViewSection from '@/components/section/product/ProductViewSection';
 import Column from '@/components/util/Column';
@@ -11,9 +12,10 @@ type ProductPageProps = {
 
 const ProductPage: NextPage<ProductPageProps> = ({ params }) => {
 	const { id } = params;
+	const data = productData?.doc?.find(product => product.id === id);
 	return (
 		<Column alignItems='center' w='full'>
-			<ProductViewSection />
+			<ProductViewSection data={data} />
 			<InfoReviewSection />
 		</Column>
 	);
