@@ -5,7 +5,7 @@ type SizeTableProps = {};
 
 const SizeTable: FC<SizeTableProps> = ({}) => {
 	return (
-		<TableContainer>
+		<TableContainer w='full'>
 			<Table variant='simple'>
 				<TableCaption>Imperial to metric conversion factors</TableCaption>
 				<Thead>

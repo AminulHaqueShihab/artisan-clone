@@ -1,5 +1,6 @@
 import ProductCard from '@/components/cards/product-card/ProductCard';
 import { categoryTabData } from '@/components/data/CategoryTabData';
+import { productData } from '@/components/data/ProductData';
 import CategoryTab from '@/components/tabs/CategoryTab';
 import Column from '@/components/util/Column';
 import SectionHeading from '@/components/util/headings/SectionHeading';
@@ -9,6 +10,7 @@ import React, { FC, useState } from 'react';
 type NewArrivalSectionProps = {};
 
 const NewArrivalSection: FC<NewArrivalSectionProps> = ({}) => {
+	const featuredProducts = productData?.doc?.slice(0, 8);
 	return (
 		<Column gap='2rem' alignItems='center' w='full'>
 			<SectionHeading title='New Arrivals' />
@@ -22,14 +24,11 @@ const NewArrivalSection: FC<NewArrivalSectionProps> = ({}) => {
 					lg: '1fr 1fr 1fr 1fr',
 				}}
 			>
-				<ProductCard />
-				<ProductCard />
-				<ProductCard />
-				<ProductCard />
-				<ProductCard />
-				<ProductCard />
-				<ProductCard />
-				<ProductCard />
+				{featuredProducts?.map(product => (
+					<>
+						<ProductCard key={product.id} data={product} />
+					</>
+				))}
 			</Grid>
 		</Column>
 	);

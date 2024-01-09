@@ -15,7 +15,7 @@ const ProductPageLayout: FC<ProductPageLayoutProps> = ({
 	return (
 		<Column {...props}>
 			<Flex
-				backgroundImage='images/banners/green-banner.png'
+				backgroundImage='/images/banners/green-banner.png'
 				w='100vw'
 				maxH='100px'
 				py='2rem'

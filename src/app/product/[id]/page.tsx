@@ -2,9 +2,8 @@
 import InfoReviewSection from '@/components/section/product/InfoReviewSection';
 import ProductViewSection from '@/components/section/product/ProductViewSection';
 import Column from '@/components/util/Column';
-import { Flex, Grid, Text } from '@chakra-ui/react';
 import { NextPage } from 'next';
-import React, { FC } from 'react';
+import React from 'react';
 
 type ProductPageProps = {
 	params: { id: string };
