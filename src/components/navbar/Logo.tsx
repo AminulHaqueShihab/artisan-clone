@@ -8,7 +8,7 @@ const Logo: FC<LogoProps> = ({ ...props }) => {
 	return (
 		<Link href='/'>
 			<Image
-				src='images/logo/logo.png'
+				src='/images/logo/logo.png'
 				userSelect='none'
 				alt='logo'
 				cursor='pointer'
