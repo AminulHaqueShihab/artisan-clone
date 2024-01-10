@@ -17,9 +17,10 @@ import SwiperProductImage from '../product/SwiperProductImage';
 import Column from '../util/Column';
 import CustomIconButton from '../util/buttons/CustomIconButton';
 import { AiOutlineFullscreen } from 'react-icons/ai';
+import { image } from '@/lib/config';
 
 type SingleProductCarouselProps = FlexProps & {
-	images: string[];
+	images?: any[];
 };
 
 const SingleProductCarousel: FC<SingleProductCarouselProps> = ({
@@ -40,8 +41,8 @@ const SingleProductCarousel: FC<SingleProductCarouselProps> = ({
 	return (
 		<Column
 			w='full'
-			maxW={{ base: '345px', sm: '505px', md: '705px' }}
-			maxH='705px'
+			maxW={{ base: '345px', sm: '505px', md: '700px' }}
+			// maxH='1000px'
 			h='full'
 			gap={{ base: 3, md: 4 }}
 			position='relative'
@@ -75,7 +76,7 @@ const SingleProductCarousel: FC<SingleProductCarouselProps> = ({
 				thumbs={{ swiper: thumbsSwiper }}
 				modules={[FreeMode, Navigation, Thumbs]}
 			>
-				{images.map((image, index) => (
+				{images?.map((image, index) => (
 					<SwiperSlide>
 						<SwiperProductImage key={index} src={image} />
 					</SwiperSlide>
@@ -92,11 +93,11 @@ const SingleProductCarousel: FC<SingleProductCarouselProps> = ({
 				navigation={true}
 				style={{
 					width: '100%',
-					height: '15%',
+					height: '20%',
 					// display: 'flex',
 				}}
 			>
-				{images.map((image, index) => (
+				{images?.map((image, index) => (
 					<SwiperSlide>
 						<SwiperProductImage key={index} src={image} />
 					</SwiperSlide>

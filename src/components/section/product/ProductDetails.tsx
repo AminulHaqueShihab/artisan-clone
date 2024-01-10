@@ -24,9 +24,11 @@ import ProductText from '@/components/util/texts/ProductText';
 import { MdOutlineFavorite, MdOutlineFavoriteBorder } from 'react-icons/md';
 import { useRouter } from 'next/navigation';
 
-type ProductDetailsProps = {};
+type ProductDetailsProps = {
+	data?: any;
+};
 
-const ProductDetails: FC<ProductDetailsProps> = ({}) => {
+const ProductDetails: FC<ProductDetailsProps> = ({data}) => {
 	const [wishlist, setWishlist] = React.useState(false);
 	const router = useRouter();
 	return (

@@ -14,7 +14,7 @@ const ProductPage: NextPage<ProductPageProps> = ({ params }) => {
 	const { id } = params;
 	const data = productData?.doc?.find(product => product.id === id);
 	return (
-		<Column alignItems='center' w='full'>
+		<Column alignItems='center' w='full' gap={10} >
 			<ProductViewSection data={data} />
 			<InfoReviewSection />
 		</Column>

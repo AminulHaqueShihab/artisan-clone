@@ -34,7 +34,7 @@ const InfoReviewSection: FC<InfoReviewSectionProps> = ({ ...props }) => {
 						index={1}
 						label='Additional information'
 					/>
-					<CustomTab tabIndex={tabIndex} index={2} label={`Reviews (${0})`} />
+					<CustomTab tabIndex={tabIndex} index={2} label={`Reviews(${0})`} />
 				</TabList>
 				<TabIndicator height='2px' />
 				<TabPanels>

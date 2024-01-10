@@ -15,13 +15,12 @@ const ProductViewSection: FC<ProductViewSectionProps> = ({
 		<Grid
 			templateColumns={{ base: '1fr', lg: '6fr 5fr' }}
 			w='full'
-			// bg='yellow'
 			justifyContent='center'
 			gap={10}
 			{...props}
 		>
-			<ProductImage />
-			<ProductDetails />
+			<ProductImage images={data?.images && data.images} />
+			<ProductDetails data={data && data} />
 		</Grid>
 	);
 };
