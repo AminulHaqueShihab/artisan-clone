@@ -41,35 +41,6 @@ const CustomNumberInput: FC<CustomNumberInputProps> = ({ ...props }) => {
 				<NumberDecrementStepper border='none' />
 			</NumberInputStepper>
 		</NumberInput>
-
-		// <InputGroup size='lg' maxH='fit-content'>
-		// 	<Input
-		// 		focusBorderColor='primary'
-		// 		value={value}
-		// 		type='number'
-
-		// 		borderRadius='unset'
-		// 		{...props}
-		// 	/>
-		// 	<InputRightElement mr='-0.5rem'>
-		// 		<Column fontWeight='200'>
-		// 			<CustomIconButton
-		// 				icon={<FaAngleUp size='1rem' />}
-		// 				size='0.2rem'
-		// 				_hover={{ color: 'primary' }}
-		// 				onClick={handleIncreament}
-		// 				aria-label='Increase'
-		// 			/>
-		// 			<CustomIconButton
-		// 				icon={<FaAngleDown size='1rem' />}
-		// 				size='0.2rem'
-		// 				_hover={{ color: 'primary' }}
-		// 				onClick={handleDecreament}
-		// 				aria-label='Decrease'
-		// 			/>
-		// 		</Column>
-		// 	</InputRightElement>
-		// </InputGroup>
 	);
 };
 
